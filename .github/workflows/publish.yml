@@ -1,0 +1,35 @@
+name: 发布到 NPM
+
+on:
+  push:
+    tags:
+      - "v*" # 当推送 v 开头的 tag 时触发，例如 v1.0.0
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 生成代码
+        run: npm run generate
+
+      - name: 构建项目
+        run: npm run build
+
+      - name: 发布到 NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
