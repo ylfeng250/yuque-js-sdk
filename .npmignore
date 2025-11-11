@@ -1,0 +1,13 @@
+src/
+node_modules/
+*.log
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+coverage/
+.env
+tsconfig.json
+openapi.json
+
