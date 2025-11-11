@@ -15,13 +15,13 @@
 ## 安装
 
 ```bash
-npm install @yuque/sdk
+npm install yuque-js-sdk
 ```
 
 或使用 yarn:
 
 ```bash
-yarn add @yuque/sdk
+yarn add yuque-js-sdk
 ```
 
 ## 快速开始
@@ -35,7 +35,7 @@ yarn add @yuque/sdk
 ### 基础用法
 
 ```typescript
-import { YuqueClient } from "@yuque/sdk";
+import { YuqueClient } from "yuque-js-sdk";
 
 // 创建客户端实例
 const client = new YuqueClient({
@@ -210,7 +210,7 @@ client.updateConfig({
 ## 错误处理
 
 ```typescript
-import { ApiError } from "@yuque/sdk";
+import { ApiError } from "yuque-js-sdk";
 
 try {
   const result = await client.user.userApiV2UserInfo();
@@ -238,7 +238,7 @@ SDK 提供了完整的 TypeScript 类型定义，包括：
 - 以及更多...
 
 ```typescript
-import type { V2User, V2Doc, V2Book } from "@yuque/sdk";
+import type { V2User, V2Doc, V2Book } from "yuque-js-sdk";
 
 const user: V2User = {
   id: 123456,
