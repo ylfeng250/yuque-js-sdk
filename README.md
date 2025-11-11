@@ -1,5 +1,7 @@
 # 语雀 JavaScript SDK
 
+> 代码是 cursor 写的，没有经过校验
+
 基于 TypeScript 的语雀 API 封装库，提供完整的类型定义和友好的调用接口。
 
 ## 特性
